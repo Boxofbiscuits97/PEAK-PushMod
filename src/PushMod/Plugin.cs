@@ -60,7 +60,7 @@ public class PushManager : MonoBehaviour {
 
         Item currentItem = localCharacter.data.currentItem;
         if (currentItem != null) {
-            bingBong = currentItem.GetItemName().Contains("Bing Bong");
+            bingBong = currentItem.GetItemName().ToLowerInvariant().Contains("bing bong");
             if (!bingBong) return;
         }
         else bingBong = false;
