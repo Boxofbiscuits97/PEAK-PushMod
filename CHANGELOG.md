@@ -1,23 +1,24 @@
 # Changelog
 
+## Version 1.1.0
+
+- Fixed an stamina ussage issue that stopped the mod from working
+
 ## Version 1.0.0
 
 ### Added
 
 - Charge system
-
   - Charge builds while holding the push key and is applied upon release.
   - Longer charge = stronger push (up to x1.5 at full charge).
   - Stamina cost dynamically scales with charge (up to x3 at full charge).
   - Visual charge indicator displayed as a progress bar at the side of the screen.
 
 - Self-push
-
   - You cannot push yourself by accident anymore. Instead, a dedicated self-push key, `G`, is provided.
     - You can do some really funny item throws such as a BingBong orbital cannon by pushing yourself, try it out!
 
 - Configuration system
-
   - The following options can be customized in the BepInEx configuration file:
     - `PushKey` — Key to perform a regular push (default: `F`)
     - `SelfPushKey` — Key to push yourself (default: `G`)
@@ -26,9 +27,7 @@
 ### Fixed
 
 - Pushing others uses a raycast filter that whitelists characters, bypassing held items like Bing Bong.
-
 - Push animation and sound effect now plays on the sender, not just the target.
-
 - Bing Bong item detection now uses item tags, avoiding compatibility issues when playing in other languages.
 
 ### Contributors
