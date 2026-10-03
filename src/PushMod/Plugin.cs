@@ -60,7 +60,6 @@ public class PushManager : MonoBehaviour {
     // ============================== Configuration Constants ===================================================
     private const float PUSH_RANGE = 2.5f;                      // Maximum distance for push interaction
     private const float PUSH_COOLDOWN = 1f;                     // Cooldown time between successful pushes
-    private const float PUSH_FORCE_BASE = 500f;                 // Base push force applied
     private const float BINGBONG_MULTIPLIER = 10f;              // Force multiplier when holding "BingBong" item
     private const float STAMINA_COST = 0.1f;                    // Stamina consumed per push
 
@@ -232,7 +231,7 @@ public class PushManager : MonoBehaviour {
         float chargeMultiplier = 1f + ((currentCharge / MAX_CHARGE) * CHARGE_FORCE_MULTIPLIER);
         float bingBongMultiplier = bingBong ? BINGBONG_MULTIPLIER : 1f;
         float totalMultiplier = bingBongMultiplier * chargeMultiplier;
-        Vector3 forceDirection = mainCamera.transform.forward * PUSH_FORCE_BASE * totalMultiplier;
+        Vector3 forceDirection = mainCamera.transform.forward * Plugin.PConfig.PushForce * totalMultiplier;
 
         Plugin.Log.LogInfo($"Push force direction: {forceDirection}");
 

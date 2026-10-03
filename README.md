@@ -24,6 +24,7 @@ A config file is automatically generated on first launch. You can customize:
 
 - Input keys (keyboard & controller)
 - Enable/disable charge system
+- Increase/Decrease the push force
 
 > This config file can be found at:
 > `Peak/BepInEx/config/com.github.boxofbiscuits97.PushMod.cfg`

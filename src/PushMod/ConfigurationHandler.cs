@@ -11,10 +11,12 @@ public class ConfigurationHandler {
     private ConfigEntry<KeyCode> _configPushKey;
     private ConfigEntry<KeyCode> _configSelfPushKey;
     private ConfigEntry<bool> _configcanCharge;
+    private ConfigEntry<float> _configPushForce;
 
     public KeyCode SelfPushKey => _configSelfPushKey.Value;
     public KeyCode PushKey => _configPushKey.Value;
     public bool CanCharge => _configcanCharge.Value;
+    public float PushForce => _configPushForce.Value;
 
     public ConfigurationHandler(Plugin instance) {
         Plugin.Log.LogInfo("PushMod ConfigurationHandler initialising");
@@ -35,6 +37,12 @@ public class ConfigurationHandler {
             key: "CanCharge",
             defaultValue: true,
             description: "The setting includes charging force when pushed"
+        );
+        _configPushForce = instance.Config.Bind(
+            section: "Push Settigns",
+            key: "PushForce",
+            defaultValue: 500f,
+            description: "The setting used to determine how powerful the push will be"
         );
 
         Plugin.Log.LogInfo("PushMod Configuration loaded:");
